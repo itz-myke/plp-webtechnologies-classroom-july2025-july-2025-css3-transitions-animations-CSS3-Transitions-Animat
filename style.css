@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 40px;
+}
+h2 {
+  margin-top: 40px;
+  color: #6a5acd;
+  
+}
+
+/* Part 1: CSS3 Transitions & Animations */
+.fancy-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: linear-gradient(90deg, #6a5acd, #00bfff);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.8s ease, background 0.5s ease;
+}
+
+.fancy-btn:hover {
+  transform: scale(1.2) rotate(360deg);
+  background: greenyellow;
+  color: black;
+}
+
+/* Keyframe animation for the box */
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 20px auto;
+  border-radius: 10px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes slide{
+    100%{ transform: translateY(0px); }
+    50%{ transform: translateY(150px); }
+    0%{ transform: translateY(0px); }
+    0% { transform: translateX(0); }
+    50% { transform: translateX(150px); }
+    100% { transform: translateX(0); }
+
+}
+
+/* Hidden animation class (will be triggered with JS) */
+.animate {
+    animation: slide 2s infinite ease-in-out;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 50%;
+  border-radius: 10px;
+  transform: translateY(-200px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+  cursor: pointer;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #08db83;
+  color: black;
+  border: none;
+  font-weight: 900;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #1f2020;
+  color: #08db83;
+}
